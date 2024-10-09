@@ -1,7 +1,7 @@
-FROM node:14
+FROM node:latest
 WORKDIR /usr/src/app
-COPY package.json package-lock.json
+COPY . .
 RUN npm install
 COPY . .
-EXPOSE 3000
-CMD ["node", "index.js"]
+ENTRYPOINT ["node"]
+CMD ["node", "index.mjs"]
