@@ -2,10 +2,14 @@ import { createServer } from "./server.mjs";
 
 const server = createServer();
 
-try {
-  const address = await server.listen({ host: "0.0.0.0" });
-  console.log(`Server started on ${address}`);
-} catch (err) {
-  console.log(err);
-  process.exit(1);
-}
+const PORT = 3000;
+const HOST = "0.0.0.0";
+
+server.listen(PORT, HOST, (err) => {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  } else {
+    console.log(`Serveur démarré sur http://${HOST}:${PORT}`);
+  }
+});

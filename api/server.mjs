@@ -1,11 +1,12 @@
 import express from 'express';
-import { router } from './index.mjs';
 
-const app = express();
-const port = 3000;
+export function createServer() {
+  const app = express();
 
-app.use('/', router);
+  app.get('/feature/:code', (req, res) => {
+    const { code } = req.params;
+    res.json({ code, enabled: true });
+  });
 
-app.listen(port, () => {
-  console.log(`API is running on http://localhost:${port}`);
-});
+  return app;
+}
