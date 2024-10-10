@@ -20,6 +20,14 @@
     "enseirb": "file:",
     "express": "^4.17.1",
     "fastify": "^5.0.0",
+    "nginx": "^1.0.8",
     "redis": "^4.7.0"
-  }
+  },
+  "description": "q",
+  "repository": {
+    "type": "git",
+    "url": "q"
+  },
+  "author": "",
+  "license": "ISC"
 }
