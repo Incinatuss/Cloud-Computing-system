@@ -1,7 +1,8 @@
-FROM node:14
-WORKDIR /usr/src/app
-COPY . .
-RUN npm install
-COPY . .
+FROM node:latest
+WORKDIR /usr/app
+COPY package.json package-lock.json ./
+RUN npm i --omit=dev
+COPY ./api/*.mjs ./src/
+COPY ./api/.env ./src/
 ENTRYPOINT ["node"]
-CMD ["node", "index.mjs"]
+CMD ["--env-file", "src/.env", "src/index.mjs"]

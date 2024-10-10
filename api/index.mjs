@@ -2,7 +2,7 @@ import { createServer } from "./server.mjs";
 
 const server = createServer();
 
-const PORT = 80;
+const PORT = 3000;
 const HOST = "0.0.0.0";
 
 server.listen(PORT, HOST, (err) => {
