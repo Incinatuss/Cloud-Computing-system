@@ -1,13 +1,16 @@
-function MultiplierPar2(a) {
-    return a*2;
+function MultiplierPar2(nombre) {
+    // Prend en entrée un nombre et le multiplie par deux (la sortie est aussi un nombre).
+    return nombre*2;
 } 
 
-function premier(a){
-    if(a<2){
+function est_premier(nombre){
+    // Détermine si un nombre est premier ou non. 
+    // Prend en entrée un nombre et renvoie un booléen (true ou false).
+    if(nombre<2){
         return true;
     }
-    for(i=2; i<=a**(1/2); i++){
-        if(a%i==0){
+    for(i=2; i<=nombre**(1/2); i++){
+        if(nombre%i==0){
             return false;
         }
     }
@@ -15,6 +18,8 @@ function premier(a){
 }
 
 function chaine_la_plus_longue() {
+    // Renvoie sur le HTML la ou les chaînes de caractères les plus longues parmis celles remplies dans le formulaire.
+    // Chaque ligne du formulaire correspond à une chaîne de caractères.
     var tableau=document.getElementById("inputtab").value.split("\n");
     var a=tableau[0];
     var s0=a.length;
@@ -46,9 +51,10 @@ function chaine_la_plus_longue() {
 }
 
 function calculer(){
+    // Donne sur le HTML si un nombre est premier ou non et calcule son double.
     var input=document.getElementById("inputNum").value;
     var result=MultiplierPar2(input);
-    if(premier(input)){
+    if(est_premier(input)){
         document.getElementById("result").innerHTML="Le nombre "+input+" est premier et son  double est "+result;
     }
     else{
@@ -56,7 +62,8 @@ function calculer(){
     }
 }
 
-function possible(){
+function choix_possibles(){
+    // Sur les trois choix donnés, si un d'entre eux est coché, enlève les deux autres.
     if(document.getElementById("Choixriche").checked){
         document.getElementById("Choixmoyen").remove;
         document.getElementById("Choixpauvre").remove;
@@ -70,7 +77,8 @@ function possible(){
         document.getElementById("Choixpauvre").remove;
     }
 }
-function test_form(){
+function test_form_riche_moyen_pauvre(){
+    // Envoie un message lorsqu'un choix est coché, selon celui qui est coché.
     if(document.getElementById("Choixriche").checked){
         alert("L'argent ne fait pas le bonheur !");
     }
