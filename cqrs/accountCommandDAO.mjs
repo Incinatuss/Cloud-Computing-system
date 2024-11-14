@@ -11,4 +11,8 @@ export const accountCommandDAO = {
         }
         console.log(ACCOUNT_LIST);
       },
+    retrieveDateById(id){
+      const copyAccount = ACCOUNT_LIST.find((account) => account.id === id);
+      return copyAccount.creationDate;
+      },
 };

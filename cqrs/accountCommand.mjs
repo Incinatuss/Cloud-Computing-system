@@ -12,6 +12,8 @@ export const accountCommand = {
     },
     saveAccount({id, lastName, firstName}) {
         const account = new Account({id: id, lastName: lastName, firstName: firstName});
+        const date = accountCommandDAO.retrieveDateById(id);
+        account.creationDate = date;
         accountCommandDAO.updateAccount(account);
         accountCommandQuerySync.updateAccount(account);
         accountCommandCache.updateAccount(account);
