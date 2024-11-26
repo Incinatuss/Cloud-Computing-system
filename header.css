@@ -1,0 +1,7 @@
+header {
+    color: var(--main-footer-header);
+    border: var(--border);
+    padding: var(--space-md);
+    font-size: clamp(20px, --font-size-lg, 80px);
+    block-size: 10rem;
+}
